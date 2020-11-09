@@ -4,6 +4,42 @@
   box-sizing: border-box;
 }
 
+:root {
+  /* Global Vars */
+  --backgroundcolorLight: #f5f3f3;
+  --SubtextColor: #6d6d6d;
+  -webkit-user-select: none;
+  --mainTextColor: #fff;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-overflow-scrolling: auto;
+
+  /* Card Variable */
+  --cardBackground: #ffffff;
+  --cardBoxShadow: 0px 4px 4px rgba(196, 196, 196, 0.25);
+
+  /* Category vars */
+  --CategoryBoxsShadow: 0px 8px 16px rgba(100, 100, 100, 0.25);
+
+  /* Loadier */
+  --loaderIcon: rgb(23, 23, 37);
+}
+[data-theme='dark'] {
+  /* Global Vars */
+  --backgroundcolorLight: #181717;
+  --SubtextColor: #d2cdcd;
+  --mainTextColor: #ffffff;
+
+  /* Card Variable */
+  --cardBackground: #292929;
+  --cardBoxShadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  /* Category vars */
+  --CategoryBoxsShadow: 0px 4px 10px #000000;
+
+  /* Loader */
+  --loaderIcon: rgb(255, 255, 255);
+}
 body {
   font-family: 'montseratt', sans-serif;
 }
@@ -97,6 +133,14 @@ main {
   text-shadow: 3px 6px rgba(50, 50, 70, 0.5);
   text-align: center;
   box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
+}
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.content-wrap {
+  flex: 0.9;
 }
 
 .weather-box .weather {

@@ -1,0 +1,25 @@
+.footer_conatiner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 10px;
+  color: #ffffff;
+  flex-wrap: wrap;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.footer_copyright h5 {
+  font-weight: 300;
+  text-align: center;
+  color: #ffffff;
+  animation: bounceIn 0.5s ease;
+}
+.footer_copyright h3 {
+  text-align: center;
+  font-weight: 400;
+  font-size: 17px;
+  color: #ffffff;
+  animation: bounceIn 0.5s ease;
+}

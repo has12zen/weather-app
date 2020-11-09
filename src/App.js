@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Footer from './components/Layout/Footer';
 const api = {
   key: process.env.REACT_APP_WETHER_API,
   base: 'https://api.openweathermap.org/data/2.5/',
@@ -58,33 +59,40 @@ function App() {
       }
     >
       <main>
-        <div className="search-box">
-          <input
-            type="text"
-            className="search-bar"
-            placeholder="Search..."
-            onChange={(e) => setQuery(e.target.value)}
-            value={query}
-            onKeyPress={search}
-          />
-        </div>
-        {typeof weather.main != 'undefined' ? (
-          <div>
-            <div className="location-box">
-              <div className="location">
-                {weather.name}, {weather.sys.country}
+        <div className="page-container">
+          <div className="content-wrap">
+            <div className="search-box">
+              <input
+                type="text"
+                className="search-bar"
+                placeholder="Search..."
+                onChange={(e) => setQuery(e.target.value)}
+                value={query}
+                onKeyPress={search}
+              />
+            </div>
+            {typeof weather.main != 'undefined' ? (
+              <div>
+                <div className="location-box">
+                  <div className="location">
+                    {weather.name}, {weather.sys.country}
+                  </div>
+                  <div className="date">{dateBuilder(new Date())}</div>
+                </div>
+                <div className="weather-box">
+                  <div className="temp">
+                    {Math.round(weather.main.temp)} degC
+                  </div>
+                  <div className="weather">{weather.weather[0].main}</div>
+                </div>
+                <div className="gap"></div>
               </div>
-              <div className="date">{dateBuilder(new Date())}</div>
-            </div>
-            <div className="weather-box">
-              <div className="temp">{Math.round(weather.main.temp)} degC</div>
-              <div className="weather">{weather.weather[0].main}</div>
-            </div>
-            <div className="gap"></div>
+            ) : (
+              ''
+            )}
           </div>
-        ) : (
-          ''
-        )}
+          <Footer />
+        </div>
       </main>
     </div>
   );
